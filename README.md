@@ -39,22 +39,25 @@ Lastly, this assignment, and significant portions of the "access_page_info.ipynb
 ```
 
 ## Data Schema
-rev_ids.json
+### rev_ids.json
 
 ```json
-{"politician_name":{
+{
     "type": "object",
     "properties":{
-        "revision_id": {
-            "type": "int",
-            "description": "Revision ID of wikipedia page"}
+        "politician_name": {
+            "type": "array",
+            "description": "Name of politician",
+            "items":{
+                "revision_id": {
+                    "type": "int",
+                    "description": "Revision ID of wikipedia page"}
+            }
+        }
     }
 }
-}
-
-
-
 ```
+
 ## Additional Notes
 
 
