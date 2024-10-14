@@ -1,6 +1,6 @@
 # Data 512 Homework 2
 ## Overview
-This repository contains the contents of an analysis into the quality rating of wikepedia articles on politicians from countries across the globe. Specifically, we use an API to scrape articles from wikepedia, and then pass these articles to the ORES ML model called LiftWing, which gives the articles their ratings. After collecting the data, this analysis generates the following 6 tables:
+This repository contains the contents of an analysis into the quality rating of wikipedia articles on politicians from countries across the globe. Specifically, we use an API to scrape articles from wikepedia, and then pass these articles to the ORES ML model called LiftWing, which gives the articles their ratings. After collecting the data, this analysis generates the following 6 tables:
 - Table 1: Top 10 countries by coverage
 - Table 2: Bottom 10 countries by coverage
 - Table 3: Top 10 countries by high quality
@@ -14,7 +14,6 @@ To generate the list of politicians by nationality ("politicians_by_country_AUG.
 To access the page info data, we use the [MediaWiki REST API for the EN Wikipedia](https://www.mediawiki.org/wiki/API:Main_page), with API documentation [here](https://www.mediawiki.org/wiki/API:Info).
 
 To score the articles, we use the Wikimedia ML service infrastructure called [LiftWing](https://wikitech.wikimedia.org/wiki/Machine_Learning/LiftWing). Specifically, we use the LiftWing version of [ORES](https://www.mediawiki.org/wiki/ORES). here we additionally link to the [ORES API documentation](https://ores.wikimedia.org) and the [ORES LiftWing documentation](https://wikitech.wikimedia.org/wiki/Machine_Learning/LiftWing/Usage).
-
 
 Lastly, this assignment, and significant portions of the "access_page_info.ipynb" and "ores_liftwing_scoring.ipnyb" files were developed by Dr. David W. McDonald for use in DATA 512, a course in the UW MS Data Science degree program. This code is provided under the [Creative Commons](https://creativecommons.org) [CC-BY license](https://creativecommons.org/licenses/by/4.0/). Revision 1.2 - September 16, 2024
 
@@ -103,15 +102,16 @@ Lastly, this assignment, and significant portions of the "access_page_info.ipynb
 | 'region'          | 'string'  | The region associated with the country
 ```
 
-## Additional Notes
-
-
 ## Research Implications
 ### Learning Reflections
+Throughout this analyses, I learned a lot about API calling, especially for using a hosted ML model like ORES LiftWing, as well as how something even as simple as a data merge can be quite cumbersome when there are issues with the data. In the analysis of the article qualities, I found that in general, economically disadvantaged countries tended to have articles that were rated as lower quality. For example, many of the countries that had zero high quality ratings were located in Africa, which was further cemented by many Africa regions being low on the region-based high-quality score analysis. One thing that surprised me is that there was no absolute trend in the ratings; for example, Norway and China are well-developed countries, but still had very poor article quality ratings (in fact both had 0 high-quality rated articles). To draw any sort of strong opinions about biases present in the wikimedia dataset would involve a much more thoughtfully derived investigation, but based on the limitied analysis provided, there does appear to be a bit of bias towards African and Asian countries having less articles in general, on a per-capita basis. However, this could possibly be do to individuals in these continents spending a lot less time on wikipedia than individuals from other places -- spending less time on wikipedia means that likely less articles have been created, and the ones that have are or lower quality.
 
-### Q1:
+### Q1: What might your results suggest about (English) Wikipedia as a data source?
+Similar to what I discussed above, the results showing that African and Asian countries have less per-capita articles and high quality per-capita articles could provide evidence that English Wikipedia does not have a fair spread of data across all regions of the world. This is not particularly shocking, as I eluded to earlier, I expect that English Wikipedia is more often used by predominantly English speaking countries -- therefore, perhaps the African and Asian contries have different online sources that they use to access information about their politicians.
 
-### Q2:
+### Q2: Can you think of a realistic data science research situation where using these data might create biased or misleading results, due to the inherent gaps and limitations of the data?
+Absolutely. If we were planning to do any sort of INTER-country analysis, we would likely face misleading results. For example, if we were planning to appoint a world leader of an international coalition, we might think to use the data contained on wikipedia as a good list of politicians to form our applicant pool. However, by analyzing this data, we would see that world leaders from many African and Asian countries would likely have much more limited, and perhaps less accurate information about them. This could lead decision makers to unfairly ignore potential applicants from these countries, simply due to lack of high-quality information.
 
-### Q3:
+### Q3: On the flip side, can you think of a realistic data science research situation where using these data might still be appropriate and useful, despite its inherent limitations and biases?
+Yes. If we were planning to do a INTRA-country analysis, despite the limitations of the data, we could still get appropriate and useful results (of course, this is just based on the comparison between countries -- we didn't look into other potential biases that might be present even within countries, perhaps biases on gender, race, etc.). For example, if we were a business, we could use this data to investigate potential politicians in Spain, to predict who might be most likely to take office and what the implications might be on our industry. However, as with all forms of bias, it is critical to take a proactive approach in attempting to limit biases whenver possible, and being sure to always be transparent about all of your data sources and analysis techniques, to showcase all potential sources.
 
