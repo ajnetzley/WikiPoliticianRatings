@@ -34,6 +34,7 @@ Lastly, this assignment, and significant portions of the "access_page_info.ipynb
 │   ├── data_processing.ipynb                               # Notebook to perform the data processing and merging of the scores datasets and population/politician countries
 │   └── data_scoring.ipynb                                  # Notebook to perform the ORES LiftWing calls to score the accessed articles
 ├── LICENSE                                               # License documentation
+├── .gitignore                                            # git ignore for the repo
 └── README.md                                             # README for the repo
 ```
 
