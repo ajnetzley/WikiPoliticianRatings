@@ -40,7 +40,6 @@ Lastly, this assignment, and significant portions of the "access_page_info.ipynb
 
 ## Data Schema
 ### rev_ids.json
-
 ```json
 {
     "type": "object",
@@ -56,6 +55,52 @@ Lastly, this assignment, and significant portions of the "access_page_info.ipynb
         }
     }
 }
+```
+
+### scores_dict.json
+
+```json
+{
+    "type": "object",
+    "properties":{
+        "politician_name": {
+            "type": "array",
+            "description": "Name of politician",
+            "items":{
+                "revision_id": {
+                    "type": "int",
+                    "description": "Revision ID of wikipedia page"
+                    },
+                "quality_score": {
+                    "type": "string",
+                    "description": "LiftWing given quality score for the article"
+                    }
+            }
+        }
+    }
+}
+```
+
+### wp_countries-no_match.txt
+```markdown
+
+| Column Name | Data Type | Data Description                                 
+| ------------------------------------------
+| 'Country'   | 'string'  | The name of the country  
+
+```
+
+### wp_politicians_by_country.csv
+```markdown
+
+| Column Name       | Data Type | Data Description                                 
+| ------------------------------------------
+| 'revision_id'     | 'int'     | The revision ID of the wikipedia article
+| 'article_quality' | 'string'  | The ORES LiftWing quality rating
+| 'article_title'   | 'string'  | The title of the article (the politician's name)  
+| 'country'         | 'string'  | The country of the politician  
+| 'population'      | 'float'   | The population of the country 
+| 'region'          | 'string'  | The region associated with the country
 ```
 
 ## Additional Notes
