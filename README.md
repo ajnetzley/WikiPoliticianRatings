@@ -21,10 +21,11 @@ Lastly, this assignment, and significant portions of the "access_page_info.ipynb
 ```markdown
 
 ├── data_clean/                                           # Folder containing the cleaned data
-│   ├── rev_ids.json                                        # JSON with the revision ids for the latest wikipedia pages
-│   ├── scores_dict.json                                    # JSON with the ORES LiftWing score associated with each article
 │   ├── wp_countries-no_match.txt                           # txt file of all country names not present in BOTH the politician-country and population-country datasets
 │   └── wp_politicians_by_country.csv                       # CSV with the final, cleaned and merged data of politician, article score, country, and population
+├── data_intermediate/                                    # Folder containing the intermediate data
+│   ├── rev_ids.json                                        # JSON with the revision ids for the latest wikipedia pages
+│   └── scores_dict.json                                    # JSON with the ORES LiftWing score associated with each article
 ├── data_raw/                                             # Folder containing the raw data
 │   ├── politicians_by_country_AUG.2024.csv                 # CSV with the list of politicians and their corresponding countries
 │   └── population_by_country_AUG.2024.csv                  # CSV with the list of countries and their populations
