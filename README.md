@@ -1,4 +1,4 @@
-# Data 512 Homework 2
+# Wiki Politicians Ratings
 ## Overview
 This repository contains the contents of an analysis into the quality rating of wikipedia articles on politicians from countries across the globe. Specifically, we use an API to scrape articles from wikipedia, and then pass these articles to the ORES ML model called LiftWing, which gives the articles their ratings. After collecting the data, this analysis generates the following 6 tables:
 - Table 1: Top 10 countries by coverage
